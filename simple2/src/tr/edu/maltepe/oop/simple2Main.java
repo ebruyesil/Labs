@@ -20,10 +20,12 @@ public class simple2Main {
 
         Student p3,p4;
 
-        p3 = new Student("Ebru Yeşil");
+        p3 = new Student();
+        p3.setStd_name("Ebru Yeşil");
         p3.learnes();
 
-        p4 = new Student("Efsa Ceren Zengin");
+        p4 = new Student();
+        p4.setStd_name("Efsa Ceren Zengin");
         p4.learnes();
 
     }
