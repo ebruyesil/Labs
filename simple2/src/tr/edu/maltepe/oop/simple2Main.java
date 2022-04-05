@@ -9,29 +9,29 @@ public class simple2Main {
         p1 = new Professor(); //object created and p1 point this object
         p1.setName("Ensar Gül");
         p1.teaches();
-        p1.football();
+       // p1.football();
 
         p1.setAge(50);
         System.out.println("Profesor Ensar Gül is "+ p1.getAge() +" years old.");
 
         p2 = new Professor();
-        p2.setName("Raif Ünal");
+        p2.setName("Tuğba Akyel");
         p2.teaches();
-        p2.swim();
+       // p2.swim();
 
 
-        Student p3,p4;
+        Student s1,s2;
 
-        p3 = new Student();
-        p3.setName("Ebru Yeşil");
-        p3.learnes();
-        p3.football();
-        p3.swim();
+        s1 = new Student();
+        s1.setName("Ebru Yeşil");
+        s1.learnes();
+       // s1.football();
+        //s1.swim();
 
-        p4 = new Student();
-        p4.setName("İrem Yeşil");
-        p4.learnes();
-        p4.swim();
+        s2 = new Student();
+        s2.setName("İrem Yeşil");
+        s2.learnes();
+        //s2.swim();
 
         Books b1, b2, b3;
         b1 = new Books();
@@ -47,25 +47,41 @@ public class simple2Main {
         Library lib;
         lib = new Library();
 
-        lib.add_book(b1);
-        lib.add_book(b2);
-        lib.add_book(b3);
+        lib.addBook(b1);
+        lib.addBook(b2);
+        lib.addBook(b3);
 
         lib.listBooks();
 
-        lib.lendBook(p1,b1);
-        lib.lendBook(p3,b2);
-        lib.lendBook(p4,b1);
         lib.borrowBook(p1,b1);
-        lib.lendBook(p1,b3);
-        lib.lendBook(p4,b1);
+        lib.borrowBook(s1,b2);
+        lib.borrowBook(s2,b1);
+        lib.giveBackBook(p1,b1);
+        lib.borrowBook(p1,b3);
+        lib.borrowBook(s2,b1);
 
-        p1.HaveBooks();
-        p3.HaveBooks();
-        p4.HaveBooks();
+        p1.haveBooks();
+        s1.haveBooks();
+        s2.haveBooks();
 
+        SportCenter c1 = new SportCenter("Kafkale Sport Center",
+                "football field","swimming pool.");
+        SportCenter c2 = new SportCenter("Maltepe University Sport Center",
+                "football field", "swimmig pool.");
 
+        p1.swim(c2);
+        s1.football(c1);
+        p2.football(c2);
+        s2.swim(c1);
 
 
     }
 }
+
+//next week
+//inheritance student and prof to person zaten yapıldı
+//override the method student or prof in person class
+//interface swim or play football implemet for prof and student
+//spor center swim over there spor center classı declare et prof swim where diye göstericek
+// futbol da part of filed sport center anlamadım
+//sport center have swimming pool and football area

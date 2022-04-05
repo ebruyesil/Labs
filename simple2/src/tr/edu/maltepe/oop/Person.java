@@ -22,18 +22,27 @@ public class Person {
        this.age = age;
    }
 
-   public void borrowBook(Books bBook){
-       books.add(bBook);
+    public void learnes(){     //it is overriding same name same argument same return type but different implementation
+        System.out.println("It is important to learn");
+    }
+
+    public void teaches(){
+        System.out.println("It is important to teach");
+    }
+
+   public void giveBook(Books book){
+       books.add(book);
    }
-   public void HaveBooks(){
-    System.out.println(name+"'s borrowed books:  ");
-    for (int i = 0; i< books.size();i++)
-    {
-        System.out.println(books.get(i).getBookname());
+    public void borrowBook(Books book){
+        books.remove(book);
     }
-}
-    public void lendBook(Books lbook){
-        books.remove(lbook);
+
+    public void haveBooks(){
+        System.out.println(getName() + "'s borrowed books:  ");
+        for(int i=0; i<books.size(); i++){
+            System.out.println(books.get(i).getBookname());
+        }
     }
+
 
 }

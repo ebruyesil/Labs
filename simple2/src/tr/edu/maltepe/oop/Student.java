@@ -16,17 +16,20 @@ public class Student extends Person implements doSport{
 
             std_name = name;
         }*/
-        void learnes(){
+        @Override
+        public void learnes(){
 
             System.out.println("Student " + getName() + " is learning now.");
         }
-
-        public void football(){
-            System.out.println("Student playing football");
-        }
-        public void swim(){
-        System.out.println("Student swimming");
-        }
-
+    @Override
+    public void swim(SportCenter sportCenter){
+        System.out.println("Student " + getName() + " went to " + sportCenter.getName() +
+                " for swimming in " + sportCenter.getSwimmingPool());
+    }
+    @Override
+    public void football(SportCenter sportCenter){
+        System.out.println("Student " + getName() + " went to " + sportCenter.getName() +
+                " for playing footbal at " + sportCenter.getFootballField());
+    }
 
     }

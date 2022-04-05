@@ -9,7 +9,4 @@ public class Books  {
         this.bookname = bookname;
     }
 
-    void barrow(){
-        System.out.println("Student is barrow this book: "+ getBookname());
-    }
 }

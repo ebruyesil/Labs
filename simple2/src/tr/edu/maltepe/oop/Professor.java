@@ -14,17 +14,21 @@ package tr.edu.maltepe.oop;
     /*Professor(String name){
         prof_name = name;
     }*/
-    void teaches(){ //it is a method
+    @Override
+    public void teaches(){ //it is a method
 
         System.out.println("Prof " + getName() + " is teaching now.");
     }
-        public void football(){
-            System.out.println("Professor also playing football");
+        @Override
+        public void swim(SportCenter sportCenter){
+            System.out.println("Professor " + getName() + " went to " + sportCenter.getName() +
+                    " for swimming in " + sportCenter.getSwimmingPool());
         }
-        public void swim(){
-            System.out.println("Professor also swimming");
+        @Override
+        public void football(SportCenter sportCenter){
+            System.out.println("Professor " + getName() + " went to " + sportCenter.getName() +
+                    " for playing footbal at " + sportCenter.getFootballField());
         }
-
 
     }
 

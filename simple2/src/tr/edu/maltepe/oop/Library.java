@@ -6,16 +6,17 @@ public class Library {
 
     private Vector vector;
     public Library(){
-
         vector = new Vector();
     }
-    public void add_book(Books aBook){
 
-        vector.add(aBook);
+    public void addBook(Books book){
+        vector.add(book);
     }
-    public void remove_book(Books rBook){
-        vector.remove(rBook);
+
+    public void removeBook(Books book){
+        vector.remove(book);
     }
+
     void listBooks(){
         System.out.println("Name of the books:");
         int i;
@@ -24,19 +25,19 @@ public class Library {
             System.out.println(temp.getBookname());
         }
     }
-    public void lendBook(Person person, Books book) {
+    public void borrowBook(Person person, Books book) {
         if (vector.contains(book)) {
-            person.borrowBook(book);
-            remove_book(book);
+            person.giveBook(book);          //showed borrowed books
+            removeBook(book);                // avaliable situation
             System.out.println(book.getBookname() + " borrowed by " + person.getName());
         } else {
             System.out.println(book.getBookname() + " isn't avaliable");
         }
     }
-        public void borrowBook(Person person, Books book){
-            person.lendBook(book);
-            add_book(book);
-            System.out.println(book.getBookname() + " borrowed by " + person.getName());
+        public void giveBackBook(Person person, Books book){
+            person.borrowBook(book);
+            addBook(book);
+            System.out.println(book.getBookname() + " gave back to library by " + person.getName());
         }
     }
 
